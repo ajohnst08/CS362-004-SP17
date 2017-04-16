@@ -670,7 +670,8 @@ int adventurer_fct(int drawntreasure, int currentPlayer, int *temphand, int z, s
 
 int smithy_fct(int currentPlayer, struct gameState *state, int handPos) {
 	//+3 Cards
-	for (int i = 0; i < 3; i++)
+	int i;
+	for (i = 0; i < 3; i++)
 	{
 		drawCard(currentPlayer, state);
 	}
