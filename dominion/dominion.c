@@ -671,10 +671,9 @@ int adventurer_fct(int drawntreasure, int currentPlayer, int *temphand, int z, s
 int smithy_fct(int currentPlayer, struct gameState *state, int handPos) {
 	//+3 Cards
 	int i;
-	for (i = 0; i < 3; i++)
-	{
-		drawCard(currentPlayer, state);
-	}
+	
+	drawCard(currentPlayer, state);
+
 
 	//discard card from hand
 	discardCard(handPos, currentPlayer, state, 0);
@@ -686,7 +685,7 @@ int village_fct(int currentPlayer, struct gameState *state, int handPos) {
 	drawCard(currentPlayer, state);
 
 	//+2 Actions
-	state->numActions = state->numActions + 2;
+	state->numActions = 2;
 
 	//discard played card from hand
 	discardCard(handPos, currentPlayer, state, 0);
@@ -701,15 +700,15 @@ int great_hall_fct(int currentPlayer, struct gameState *state, int handPos) {
 	state->numActions++;
 
 	//discard card from hand
-	discardCard(handPos, currentPlayer, state, 0);
+	discardCard(handPos, currentPlayer, state, 1);
 	return 0;
 }
 
 int salvager_fct(int choice1, struct gameState *state, int currentPlayer, int handPos) {
 	//+1 buy
-	state->numBuys++;
+	state->numBuys--;
 
-	if (choice1)
+	if(choice1)
 	{
 		//gain coins equal to trashed card
 		state->coins = state->coins + getCost(handCard(choice1, state));
