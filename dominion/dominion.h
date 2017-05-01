@@ -136,5 +136,7 @@ int playVillage(struct gameState *state, int handPos);
 int playFeast(struct gameState *state, int choice1);
 int playCouncil_Room(struct gameState *state, int handPos);
 
+int smithy_fct(int currentPlayer, struct gameState *state, int handPos);
+int adventurer_fct(int drawntreasure, int currentPlayer, int *temphand, int z, struct gameState *state, int handPos, int *bonus);
 
 #endif
