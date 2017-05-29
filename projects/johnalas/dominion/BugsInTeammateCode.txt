@@ -1,0 +1,8 @@
+Bug in dominion.c:
+Line 1350
+Coin value should not be increased in "playVillage" function
+
+
+Bug in dominion.c:
+Line 1334
+Player action value should not be increased in the "playSmithy" function
